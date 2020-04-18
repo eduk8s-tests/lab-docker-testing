@@ -38,7 +38,7 @@ spec:
         - name: DOCKER_TLS_CERTDIR
           value: /certs
         - name: DOCKER_HOST
-          value: tcp://127.0.0.1:2376
+          value: tcp://127.0.0.1:2376/
         volumeMounts:
         - name: docker
           mountPath: /run/containers
@@ -53,9 +53,7 @@ spec:
           subPath: client
           readOnly: true
       - name: docker
-        image: docker:dind-rootless
-        args:
-        - --experimental
+        image: docker:dind
         securityContext:
           privileged: true
         requests:
@@ -235,7 +233,7 @@ spec:
         hostPID: false
         hostPorts: []
         runAsUser:
-          rule: MustRunAsNonRoot
+          rule: RunAsAny
         seLinux:
           rule: RunAsAny
         fsGroup:
