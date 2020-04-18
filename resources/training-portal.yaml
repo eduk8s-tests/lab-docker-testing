@@ -5,6 +5,7 @@ metadata:
 spec:
   portal:
     capacity: 1
+    reserved: 1
     expires: 60m
     orphaned: 5m
   workshops:

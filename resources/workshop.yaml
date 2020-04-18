@@ -7,15 +7,15 @@ spec:
   title: Markdown Sample
   description: A sample workshop using Markdown
   url: https://github.com/eduk8s/lab-docker-testing
-  image: quay.io/eduk8s-tests/lab-docker-testing:latest
   content: github.com/eduk8s-tests/lab-docker-testing
   duration: 60m
   session:
     budget: medium
     applications:
-      console:
+      terminal:
         enabled: true
-      editor:
+        layout: split
+      console:
         enabled: true
     env:
     - name: REGISTRY_HOST
@@ -27,25 +27,14 @@ spec:
     patches:
       containers:
       - name: workshop
-        resources:
-          requests:
-            memory: 256Mi
-          limits:
-            memory: 768Mi
-        securityContext:
-          privileged: true
         env:
-        - name: DOCKER_TLS_CERTDIR
-          value: /certs
+        - name: DOCKER_CERT_PATH
+          value: /certs/client
         - name: DOCKER_HOST
           value: tcp://127.0.0.1:2376/
+        - name: DOCKER_TLS_VERIFY
+          value: "1"
         volumeMounts:
-        - name: docker
-          mountPath: /run/containers
-          subPath: run-containers
-        - name: docker
-          mountPath: /var/lib/containers
-          subPath: var-lib-containers
         - name: registry
           mountPath: /var/run/registry
         - name: docker-certs
@@ -228,6 +217,8 @@ spec:
         requiredDropCapabilities:
         - KILL
         - MKNOD
+        - SETUID
+        - SETGID
         hostIPC: false
         hostNetwork: false
         hostPID: false
