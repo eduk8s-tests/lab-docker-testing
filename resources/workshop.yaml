@@ -69,8 +69,6 @@ spec:
             path: config.json
       - name: docker-certs
         emptyDir: {}
-      - name: docker-user
-        emptyDir: {}
     objects:
     - apiVersion: v1
       kind: PersistentVolumeClaim
