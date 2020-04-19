@@ -4,8 +4,8 @@ metadata:
   name: lab-docker-testing
 spec:
   vendor: eduk8s.io
-  title: Markdown Sample
-  description: A sample workshop using Markdown
+  title: Docker Testing
+  description: Play area for testing docker
   url: https://github.com/eduk8s/lab-docker-testing
   content: github.com/eduk8s-tests/lab-docker-testing
   duration: 60m
