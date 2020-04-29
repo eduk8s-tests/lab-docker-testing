@@ -1,4 +1,4 @@
-apiVersion: training.eduk8s.io/v1alpha1
+apiVersion: training.eduk8s.io/v1alpha2
 kind: Workshop
 metadata:
   name: lab-docker-testing
@@ -7,7 +7,8 @@ spec:
   title: Docker Testing
   description: Play area for testing docker
   url: https://github.com/eduk8s/lab-docker-testing
-  content: github.com/eduk8s-tests/lab-docker-testing
+  content:
+    files: github.com/eduk8s-tests/lab-docker-testing
   duration: 60m
   session:
     budget: medium
