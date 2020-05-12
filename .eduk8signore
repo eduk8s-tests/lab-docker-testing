@@ -1,8 +1,8 @@
-.dockerignore
-.git
-.gitignore
-Dockerfile
-LICENSE
-README.md
-kustomization.yaml
-resources
+./.dockerignore
+./.git
+./.gitignore
+./Dockerfile
+./LICENSE
+./README.md
+./kustomization.yaml
+./resources
