@@ -6,7 +6,7 @@ spec:
   vendor: eduk8s.io
   title: Docker Testing
   description: Play area for testing docker
-  url: https://github.com/eduk8s/lab-docker-testing
+  url: https://github.com/eduk8s-tests/lab-docker-testing
   content:
     files: github.com/eduk8s-tests/lab-docker-testing
   duration: 60m
