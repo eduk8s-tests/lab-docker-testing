@@ -11,7 +11,8 @@ spec:
     files: github.com/eduk8s-tests/lab-docker-testing
   duration: 60m
   session:
-    budget: medium
+    namespaces:
+      budget: medium
     applications:
       terminal:
         enabled: true
