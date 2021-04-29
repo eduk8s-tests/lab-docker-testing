@@ -1,8 +1,4 @@
-To build a new container image, change to the ``exercises`` subdirectory.
-
-```execute-1
-cd exercises
-```
+Next we will build a new container image.
 
 List the files in the directory.
 
